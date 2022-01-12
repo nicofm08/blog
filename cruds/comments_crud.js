@@ -9,7 +9,7 @@ async function commentsGet() {
 async function commentsCreate(req) {
     const comment = req.body;
     const token = req.headers.authorization;
-    const veriftoken = jwt.verifyToken(token);
+    const veriftoken = fun.verifyToken(token);
     let data;
     if (comment.content && veriftoken.privilege.includes('WRITE')) {
         data = await fun.insupdelDb("INSERT INTO `comments` (`id_article`, `id_user`, `content`, `created_at`, `updated_at`) VALUES ('" + comment.id_article + "', '" + veriftoken.id_user + "', '" + comment.content + "', NOW(), NOW());");
