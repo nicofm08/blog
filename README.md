@@ -84,6 +84,7 @@ curl --location --request DELETE 'http://localhost:8000/articles' \
 "id_article": 34
 
 }'
+
 -------------------COMMENTS-----------------------------------------
 
 GET:
